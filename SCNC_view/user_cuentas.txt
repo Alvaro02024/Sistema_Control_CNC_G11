@@ -1,0 +1,7 @@
+123456;juan;1;veloz@gmail.com;sol;0
+789012;maria;1;brillante@gmail.com;estrella;0
+345678;luis;1;rapido@gmail.com;luna;0
+901234;ana;1;luminoso@gmail.com;cometa;1
+567890;carlos;1;fulgurante@gmail.com;galaxia;1
+234567;sofia;1;radiante@gmail.com;nebulosa;3
+890123;diego;1;brillante@gmail.com;astro;1
