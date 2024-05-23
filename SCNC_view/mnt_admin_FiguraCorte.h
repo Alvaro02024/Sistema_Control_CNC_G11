@@ -1,4 +1,5 @@
 #pragma once
+#include "edit_admin_FiguraCorte.h";
 
 
 namespace SCNCview {
@@ -209,6 +210,7 @@ namespace SCNCview {
 			this->button3->TabIndex = 2;
 			this->button3->Text = L"Editar";
 			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &mnt_admin_FiguraCorte::button3_Click);
 			// 
 			// button4
 			// 
@@ -265,6 +267,7 @@ namespace SCNCview {
 		}
 		else if ((n_autor != "") && (n_codigo != "")) {
 			ListFiguraCorte = fcController->buscarfgxAutorxID(n_autor, Convert::ToUInt32(n_codigo));
+			//Falta arreglar que se junte la busqueda de autor e ID
 		}
 	}
 
@@ -286,5 +289,13 @@ namespace SCNCview {
 
 
 
-	};
+	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+		int filaSeleccionada = this->dataGridView1->SelectedRows[0]->Index; /*Le pongo [0] porque deseo el índice de la única fila que he seleccionado*/
+		int fcIdEditar = Convert::ToInt32(this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString());
+		figuracorteController^ fcController = gcnew figuracorteController();
+		figuraCorte^ fcEdit = fcController->buscarfgxID_unitario(fcIdEditar);
+		edit_admin_FiguraCorte^ nw_edit_FC = gcnew edit_admin_FiguraCorte(fcEdit);
+		nw_edit_FC->Show();
+	}
+};
 	}

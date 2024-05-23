@@ -30,6 +30,9 @@
     <ClCompile Include="mnt_admin_FiguraCorte.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
+    <ClCompile Include="edit_admin_FiguraCorte.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ventanaINICIO.h">
@@ -42,6 +45,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="mnt_admin_FiguraCorte.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="edit_admin_FiguraCorte.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

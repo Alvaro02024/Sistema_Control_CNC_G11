@@ -12,6 +12,7 @@ namespace SCNC_controller {
 		List<figuraCorte^>^ buscarfgxAutor(String^ autor);
 		List<figuraCorte^>^ buscarfgxID(int buscar_ID);
 		List<figuraCorte^>^ buscarfgxAutorxID(String^ n_autor, int n_ID);
+		figuraCorte^ buscarfgxID_unitario(int buscar_ID);
 
 	};
 
