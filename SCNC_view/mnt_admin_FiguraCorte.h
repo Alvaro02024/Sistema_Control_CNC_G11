@@ -1,5 +1,6 @@
 #pragma once
 #include "edit_admin_FiguraCorte.h";
+#include "new_admin_FiguraCorte.h";
 
 
 namespace SCNCview {
@@ -228,11 +229,11 @@ namespace SCNCview {
 			// 
 			// button5
 			// 
-			this->button5->Location = System::Drawing::Point(309, 348);
+			this->button5->Location = System::Drawing::Point(297, 348);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(75, 23);
 			this->button5->TabIndex = 3;
-			this->button5->Text = L"button5";
+			this->button5->Text = L"Eliminar";
 			this->button5->UseVisualStyleBackColor = true;
 			this->button5->Click += gcnew System::EventHandler(this, &mnt_admin_FiguraCorte::button5_Click);
 			// 
@@ -249,7 +250,6 @@ namespace SCNCview {
 			this->Controls->Add(this->groupBox1);
 			this->Name = L"mnt_admin_FiguraCorte";
 			this->Text = L"Seleccionar figura corte";
-			this->Load += gcnew System::EventHandler(this, &mnt_admin_FiguraCorte::mnt_admin_FiguraCorte_Load);
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
@@ -315,12 +315,18 @@ namespace SCNCview {
 	}
 
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {//BOTON NUEVO
+	new_admin_FiguraCorte^ nw_NuevaFiguraCorte = gcnew new_admin_FiguraCorte();
+	nw_NuevaFiguraCorte->Show();
+
+
 }
 private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) { //BOTON ELIMINAR
 	int filaSeleccionada = this->dataGridView1->SelectedRows[0]->Index; /*Le pongo [0] porque deseo el índice de la única fila que he seleccionado*/
 	int IdEliminar = Convert::ToInt32(this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString());
 	figuracorteController^ fcController = gcnew figuracorteController();
 	fcController->eliminarFC(IdEliminar);
+	MessageBox::Show("Se ha eliminado correctamente la figura de corte");
+	this->dataGridView1->Rows->Clear();
 }
 };
 	}

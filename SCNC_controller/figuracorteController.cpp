@@ -1,5 +1,6 @@
 #include "figuracorteController.h"
 #include "lineacorteController.h"
+#include "posicionController.h"
 
 using namespace SCNC_controller;
 using namespace System::IO;
@@ -163,4 +164,13 @@ void figuracorteController::eliminarFC(int ID) {
 		}
 	}
 	escribirArchivo(list);
+}
+
+void figuracorteController::agregarNuevaFC(int n_ID, String^ n_Diseño, String^ n_Autor, String^ n_material, String^ n_Fecha) {
+	List<figuraCorte^>^ listaFC = buscarfgALL();
+	lineacorteController^ objLCController = gcnew lineacorteController();
+	List<lineaCorte^>^ listLC = objLCController->buscarAllLineasC();
+	figuraCorte^ objFiguraCorte = gcnew figuraCorte(n_ID, n_Diseño, n_Autor, n_material, n_Fecha, listLC);
+	listaFC->Add(objFiguraCorte);
+	escribirArchivo(listaFC);
 }

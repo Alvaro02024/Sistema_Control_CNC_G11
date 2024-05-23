@@ -17,6 +17,7 @@ namespace SCNC_controller {
 		void actualizarFiguraCorte(int e_ID, String^ e_Diseño, String^ e_Autor, String^ e_material, String^ e_Fecha);
 		void escribirArchivo(List<figuraCorte^>^ lista_escribir);
 		void eliminarFC(int ID);
+		void agregarNuevaFC(int n_ID, String^ n_Diseño, String^ n_Autor, String^ n_material, String^ n_Fecha);
 
 	};
 

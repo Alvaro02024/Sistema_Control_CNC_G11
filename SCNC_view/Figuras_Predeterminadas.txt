@@ -7,7 +7,7 @@
 16782;Cruz;Pedro;acero;01/12/2023
 49823;Recta;Nilton;acero;28/10/2023
 75123;Triangulo;Luis;acero;14/08/2023
-61482;Cuadrado;Nilton;madera;23/06/2023
+61482;Cuadrado;Nilton;acero;23/06/2023
 38274;Rectangulo;Nilton;acero;05/04/2023
 19573;Rombo;Alvaro;madera;12/03/2023
 84629;Cruz;Luis;acero;27/02/2023
@@ -15,4 +15,3 @@
 57934;Triangulo;Alberto;acero;07/10/2023
 42561;Cuadrado;Luis;madera;19/05/2023
 89673;Rectangulo;Nilton;acero;11/09/2023
-73452;Rombo;Rodrigo;madera;22/12/2023
