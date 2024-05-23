@@ -131,11 +131,15 @@
   <ItemGroup>
     <ClCompile Include="adminAcciones.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="mnt_admin_FiguraCorte.cpp" />
     <ClCompile Include="userAcciones.cpp" />
     <ClCompile Include="ventanaINICIO.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="adminAcciones.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="mnt_admin_FiguraCorte.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="userAcciones.h">
@@ -148,6 +152,9 @@
   <ItemGroup>
     <EmbeddedResource Include="adminAcciones.resx">
       <DependentUpon>adminAcciones.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mnt_admin_FiguraCorte.resx">
+      <DependentUpon>mnt_admin_FiguraCorte.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="userAcciones.resx">
       <DependentUpon>userAcciones.h</DependentUpon>

@@ -6,14 +6,14 @@ posicion::posicion() {
 	
 }
 
-posicion::posicion(double coordenadaIX, double coordenadaIY, double coordenadaIZ, double coordenadaFX, double coordenadaFY, double coordenadaFZ, List<estadoCorte^>^ listEstadoCorte) {
+posicion::posicion(double coordenadaIX, double coordenadaIY, double coordenadaIZ, double coordenadaFX, double coordenadaFY, double coordenadaFZ) {
 	this->coordenadaIX = coordenadaIX;
 	this->coordenadaIY = coordenadaIY;
 	this->coordenadaIZ = coordenadaIZ;
 	this->coordenadaFX = coordenadaFX;
 	this->coordenadaFY = coordenadaFY;
 	this->coordenadaFZ = coordenadaFZ;
-	this->listEstadoCorte = listEstadoCorte;
+	
 }
 
 double posicion::getCoordenadaIX() {
@@ -64,11 +64,5 @@ void posicion::setCoordenadaFZ(double coordenadaFZ) {
 	this->coordenadaFZ = coordenadaFZ;
 }
 
-List<estadoCorte^>^ posicion::getListEstadoCorte() {
-	return this->listEstadoCorte;
-}
 
-void posicion::setListEstadoCorte(List<estadoCorte^>^ listEstadoCorte) {
-	this->listEstadoCorte = listEstadoCorte;
-}
 

@@ -193,13 +193,16 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 		usuarioController^ objUsuarioController = gcnew usuarioController();
 		int confirmaAdmin = objAdministradorController->verificarAdmin(new_user, new_cont);
 		int confirmaUser = objUsuarioController->verificarUser(new_user, new_cont);
+
 		if (confirmaAdmin) {
-			adminAcciones^ nw_adminAcciones = gcnew adminAcciones();
+			int FG_admin = 0;
+			adminAcciones^ nw_adminAcciones = gcnew adminAcciones(FG_admin);
 			nw_adminAcciones->Show();
 			
 		}
 		else if(confirmaUser) {
-			userAcciones^ nw_userAcciones = gcnew userAcciones();
+			int FG_user = 0;
+			userAcciones^ nw_userAcciones = gcnew userAcciones(FG_user);
 			nw_userAcciones->Show();
 		}
 		else {

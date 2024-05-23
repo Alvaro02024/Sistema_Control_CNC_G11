@@ -9,7 +9,7 @@ usuarioController::usuarioController() {
 }
 
 int usuarioController::verificarUser(String^ u_user, String^ u_cont) {
-	int confirmar;
+	int confirmar = 0;
 	array<String^>^ linea = File::ReadAllLines("user_cuentas.txt");
 	String^ separador = ";";
 	for each (String ^ usuario in linea) {
@@ -17,7 +17,7 @@ int usuarioController::verificarUser(String^ u_user, String^ u_cont) {
 		int user = Convert::ToInt32(datos[0]);
 		String^ contraseña = datos[1];
 
-		if ((Convert::ToInt32(u_user) == Convert::ToInt32(user)) && (u_cont == contraseña)) {
+		if ((Convert::ToInt32(user) == Convert::ToInt32(u_user)) && (contraseña ->CompareTo(u_cont))) {
 			confirmar = 1;
 		}
 	}

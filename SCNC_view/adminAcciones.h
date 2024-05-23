@@ -1,4 +1,5 @@
 #pragma once
+#include "mnt_admin_FiguraCorte.h"
 
 namespace SCNCview {
 
@@ -23,6 +24,15 @@ namespace SCNCview {
 			//
 		}
 
+		adminAcciones(int FG_ID)
+		{
+			InitializeComponent();
+			this->FG_ID = FG_ID;
+			//
+			//TODO: Add the constructor code here
+			//
+		}
+
 	protected:
 		/// <summary>
 		/// Clean up any resources being used.
@@ -42,6 +52,7 @@ namespace SCNCview {
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::Button^ button1;
+	private: int FG_ID;
 
 	private:
 		/// <summary>
@@ -59,10 +70,10 @@ namespace SCNCview {
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button4 = (gcnew System::Windows::Forms::Button());
+			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->groupBox1->SuspendLayout();
 			this->groupBox2->SuspendLayout();
 			this->SuspendLayout();
@@ -105,33 +116,6 @@ namespace SCNCview {
 			this->groupBox2->TabStop = false;
 			this->groupBox2->Text = L"Seleccione una acción:";
 			// 
-			// button1
-			// 
-			this->button1->Location = System::Drawing::Point(73, 28);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(162, 37);
-			this->button1->TabIndex = 0;
-			this->button1->Text = L"Historial de máquina";
-			this->button1->UseVisualStyleBackColor = true;
-			// 
-			// button2
-			// 
-			this->button2->Location = System::Drawing::Point(73, 82);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(162, 37);
-			this->button2->TabIndex = 0;
-			this->button2->Text = L"Seleccionar figura corte";
-			this->button2->UseVisualStyleBackColor = true;
-			// 
-			// button3
-			// 
-			this->button3->Location = System::Drawing::Point(73, 137);
-			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(162, 37);
-			this->button3->TabIndex = 0;
-			this->button3->Text = L"Operación manual";
-			this->button3->UseVisualStyleBackColor = true;
-			// 
 			// button4
 			// 
 			this->button4->Location = System::Drawing::Point(73, 191);
@@ -142,6 +126,34 @@ namespace SCNCview {
 			this->button4->UseVisualStyleBackColor = true;
 			this->button4->Click += gcnew System::EventHandler(this, &adminAcciones::button4_Click);
 			// 
+			// button3
+			// 
+			this->button3->Location = System::Drawing::Point(73, 137);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(162, 37);
+			this->button3->TabIndex = 0;
+			this->button3->Text = L"Operación manual";
+			this->button3->UseVisualStyleBackColor = true;
+			// 
+			// button2
+			// 
+			this->button2->Location = System::Drawing::Point(73, 82);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(162, 37);
+			this->button2->TabIndex = 0;
+			this->button2->Text = L"Seleccionar figura corte";
+			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &adminAcciones::button2_Click);
+			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(73, 28);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(162, 37);
+			this->button1->TabIndex = 0;
+			this->button1->Text = L"Historial de máquina";
+			this->button1->UseVisualStyleBackColor = true;
+			// 
 			// adminAcciones
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -151,6 +163,7 @@ namespace SCNCview {
 			this->Controls->Add(this->groupBox1);
 			this->Name = L"adminAcciones";
 			this->Text = L"Administrador";
+			this->Load += gcnew System::EventHandler(this, &adminAcciones::adminAcciones_Load);
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();
 			this->groupBox2->ResumeLayout(false);
@@ -161,5 +174,13 @@ namespace SCNCview {
 	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
 	}
+private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+	//Inicializo la ventana del mantenimiento/selección de figura para conseguir el código de dicha figura
+	mnt_admin_FiguraCorte^ mantenimientoFG = gcnew mnt_admin_FiguraCorte(FG_ID);
+	mantenimientoFG->Show();
+}
+private: System::Void adminAcciones_Load(System::Object^ sender, System::EventArgs^ e) {
+	
+}
 };
 }

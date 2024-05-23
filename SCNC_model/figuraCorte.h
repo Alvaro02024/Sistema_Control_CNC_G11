@@ -16,7 +16,7 @@ namespace SCNC_model {
 	public:
 		figuraCorte();
 		figuraCorte(int ID, String^ diseño, String^ autor, String^ material, String^ fechaCreacion, List<lineaCorte^>^ listLineaCorte);
-
+		
 		int getID();
 		void setID(int ID);
 		String^ getDiseño();

@@ -118,12 +118,20 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="administradorController.h" />
+    <ClInclude Include="estadocorteController.h" />
+    <ClInclude Include="figuracorteController.h" />
     <ClInclude Include="licenciaController.h" />
+    <ClInclude Include="lineacorteController.h" />
+    <ClInclude Include="posicionController.h" />
     <ClInclude Include="usuarioController.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="administradorController.cpp" />
+    <ClCompile Include="estadocorteController.cpp" />
+    <ClCompile Include="figuracorteController.cpp" />
     <ClCompile Include="licenciaController.cpp" />
+    <ClCompile Include="lineacorteController.cpp" />
+    <ClCompile Include="posicionController.cpp" />
     <ClCompile Include="usuarioController.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

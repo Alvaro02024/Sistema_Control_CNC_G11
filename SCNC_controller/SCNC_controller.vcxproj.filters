@@ -24,6 +24,18 @@
     <ClInclude Include="licenciaController.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="figuracorteController.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="lineacorteController.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="estadocorteController.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="posicionController.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="administradorController.cpp">
@@ -33,6 +45,18 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="licenciaController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="figuracorteController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lineacorteController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="estadocorteController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="posicionController.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

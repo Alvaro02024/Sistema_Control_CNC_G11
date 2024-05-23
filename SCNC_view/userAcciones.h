@@ -23,6 +23,15 @@ namespace SCNCview {
 			//
 		}
 
+		userAcciones(int FG_ID)
+		{
+			InitializeComponent();
+			this->FG_ID = FG_ID;
+			//
+			//TODO: Add the constructor code here
+			//
+		}
+
 	protected:
 		/// <summary>
 		/// Clean up any resources being used.
@@ -42,6 +51,7 @@ namespace SCNCview {
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::Button^ button1;
+	private: int FG_ID;
 
 	private:
 		/// <summary>

@@ -13,11 +13,11 @@ namespace SCNC_model {
 		double coordenadaFX;
 		double coordenadaFY;
 		double coordenadaFZ;
-		List<estadoCorte^>^ listEstadoCorte;
+		
 
 	public:
 		posicion();
-		posicion(double coordenadaIX, double coordenadaIY, double coordenadaIZ, double coordenadaFX, double coordenadaFY, double coordenadaFZ, List<estadoCorte^>^ listEstadoCorte);
+		posicion(double coordenadaIX, double coordenadaIY, double coordenadaIZ, double coordenadaFX, double coordenadaFY, double coordenadaFZ);
 
 		double getCoordenadaIX();
 		void setCoordenadaIX(double coordenadaIX);
@@ -31,7 +31,6 @@ namespace SCNC_model {
 		void setCoordenadaFY(double coordenadaFY);
 		double getCoordenadaFZ();
 		void setCoordenadaFZ(double coordenadaFZ);
-		List<estadoCorte^>^ getListEstadoCorte();
-		void setListEstadoCorte(List<estadoCorte^>^ listEstadoCorte);
+		
 	};
 }
