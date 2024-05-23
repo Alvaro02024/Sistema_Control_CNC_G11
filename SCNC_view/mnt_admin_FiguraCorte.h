@@ -65,6 +65,8 @@ namespace SCNCview {
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::Button^ button4;
 	private: int cod;
+	private: System::Windows::Forms::Button^ button5;
+
 
 	private:
 		/// <summary>
@@ -94,6 +96,7 @@ namespace SCNCview {
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button4 = (gcnew System::Windows::Forms::Button());
+			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->groupBox1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
@@ -195,16 +198,17 @@ namespace SCNCview {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(100, 348);
+			this->button2->Location = System::Drawing::Point(62, 348);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(75, 23);
 			this->button2->TabIndex = 2;
 			this->button2->Text = L"Nuevo";
 			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &mnt_admin_FiguraCorte::button2_Click);
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(263, 348);
+			this->button3->Location = System::Drawing::Point(177, 348);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(75, 23);
 			this->button3->TabIndex = 2;
@@ -214,19 +218,30 @@ namespace SCNCview {
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(419, 348);
+			this->button4->Location = System::Drawing::Point(460, 348);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(75, 23);
 			this->button4->TabIndex = 2;
-			this->button4->Text = L"Salir";
+			this->button4->Text = L"Confirmar";
 			this->button4->UseVisualStyleBackColor = true;
 			this->button4->Click += gcnew System::EventHandler(this, &mnt_admin_FiguraCorte::button4_Click);
+			// 
+			// button5
+			// 
+			this->button5->Location = System::Drawing::Point(309, 348);
+			this->button5->Name = L"button5";
+			this->button5->Size = System::Drawing::Size(75, 23);
+			this->button5->TabIndex = 3;
+			this->button5->Text = L"button5";
+			this->button5->UseVisualStyleBackColor = true;
+			this->button5->Click += gcnew System::EventHandler(this, &mnt_admin_FiguraCorte::button5_Click);
 			// 
 			// mnt_admin_FiguraCorte
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(597, 393);
+			this->Controls->Add(this->button5);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button2);
@@ -234,6 +249,7 @@ namespace SCNCview {
 			this->Controls->Add(this->groupBox1);
 			this->Name = L"mnt_admin_FiguraCorte";
 			this->Text = L"Seleccionar figura corte";
+			this->Load += gcnew System::EventHandler(this, &mnt_admin_FiguraCorte::mnt_admin_FiguraCorte_Load);
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
@@ -241,12 +257,12 @@ namespace SCNCview {
 
 		}
 #pragma endregion
-	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) { //BOTON CONFIRMAR
 		int filaSeleccionada = this->dataGridView1->SelectedRows[0]->Index;
 		cod = Convert::ToInt32(this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString());
 		this->Close();		
 	}
-	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) { //BOTON BUSCAR
 		String^ n_autor = this->comboBox1->Text;
 		String^ n_codigo = this->textBox1->Text;
 
@@ -289,7 +305,7 @@ namespace SCNCview {
 
 
 
-	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) { //boton editar
 		int filaSeleccionada = this->dataGridView1->SelectedRows[0]->Index; /*Le pongo [0] porque deseo el índice de la única fila que he seleccionado*/
 		int fcIdEditar = Convert::ToInt32(this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString());
 		figuracorteController^ fcController = gcnew figuracorteController();
@@ -297,5 +313,14 @@ namespace SCNCview {
 		edit_admin_FiguraCorte^ nw_edit_FC = gcnew edit_admin_FiguraCorte(fcEdit);
 		nw_edit_FC->Show();
 	}
+
+private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {//BOTON NUEVO
+}
+private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) { //BOTON ELIMINAR
+	int filaSeleccionada = this->dataGridView1->SelectedRows[0]->Index; /*Le pongo [0] porque deseo el índice de la única fila que he seleccionado*/
+	int IdEliminar = Convert::ToInt32(this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString());
+	figuracorteController^ fcController = gcnew figuracorteController();
+	fcController->eliminarFC(IdEliminar);
+}
 };
 	}

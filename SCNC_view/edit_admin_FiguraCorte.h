@@ -54,13 +54,14 @@ namespace SCNCview {
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::ComboBox^ comboBox1;
-	private: System::Windows::Forms::DateTimePicker^ dateTimePicker1;
+
 	private: System::Windows::Forms::TextBox^ textBox3;
 	private: System::Windows::Forms::TextBox^ textBox2;
 	private: System::Windows::Forms::TextBox^ textBox1;
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::Button^ button2;
 	private: figuraCorte^ fc;
+	private: System::Windows::Forms::TextBox^ textBox4;
 
 	private:
 		/// <summary>
@@ -76,11 +77,11 @@ namespace SCNCview {
 		void InitializeComponent(void)
 		{
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
+			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
-			this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
@@ -93,11 +94,11 @@ namespace SCNCview {
 			// 
 			// groupBox1
 			// 
+			this->groupBox1->Controls->Add(this->textBox4);
 			this->groupBox1->Controls->Add(this->textBox3);
 			this->groupBox1->Controls->Add(this->textBox2);
 			this->groupBox1->Controls->Add(this->textBox1);
 			this->groupBox1->Controls->Add(this->comboBox1);
-			this->groupBox1->Controls->Add(this->dateTimePicker1);
 			this->groupBox1->Controls->Add(this->label5);
 			this->groupBox1->Controls->Add(this->label4);
 			this->groupBox1->Controls->Add(this->label3);
@@ -110,8 +111,16 @@ namespace SCNCview {
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Datos figura de corte:";
 			// 
+			// textBox4
+			// 
+			this->textBox4->Location = System::Drawing::Point(151, 236);
+			this->textBox4->Name = L"textBox4";
+			this->textBox4->Size = System::Drawing::Size(100, 20);
+			this->textBox4->TabIndex = 6;
+			// 
 			// textBox3
 			// 
+			this->textBox3->Enabled = false;
 			this->textBox3->Location = System::Drawing::Point(151, 36);
 			this->textBox3->Name = L"textBox3";
 			this->textBox3->Size = System::Drawing::Size(100, 20);
@@ -139,14 +148,6 @@ namespace SCNCview {
 			this->comboBox1->Name = L"comboBox1";
 			this->comboBox1->Size = System::Drawing::Size(121, 21);
 			this->comboBox1->TabIndex = 2;
-			// 
-			// dateTimePicker1
-			// 
-			this->dateTimePicker1->Format = System::Windows::Forms::DateTimePickerFormat::Short;
-			this->dateTimePicker1->Location = System::Drawing::Point(151, 236);
-			this->dateTimePicker1->Name = L"dateTimePicker1";
-			this->dateTimePicker1->Size = System::Drawing::Size(98, 20);
-			this->dateTimePicker1->TabIndex = 1;
 			// 
 			// label5
 			// 
@@ -206,6 +207,7 @@ namespace SCNCview {
 			this->button1->TabIndex = 1;
 			this->button1->Text = L"Grabar";
 			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &edit_admin_FiguraCorte::button1_Click);
 			// 
 			// button2
 			// 
@@ -235,14 +237,26 @@ namespace SCNCview {
 		}
 #pragma endregion
 	private: System::Void edit_admin_FiguraCorte_Load(System::Object^ sender, System::EventArgs^ e) {
-		this->textBox1->Text = Convert::ToString(this->fc->getID());
+		this->textBox3->Text = Convert::ToString(this->fc->getID());
 		this->textBox2->Text = this->fc->getDiseño();
-		this->textBox3->Text = this->fc->getAutor();
+		this->textBox1->Text = this->fc->getAutor();
 		this->comboBox1->Text = this->fc->getMaterial();
+		this->textBox4->Text = this->fc->getFechaCreacion();
 		
 
 	}
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Close();
+}
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	int e_ID = Convert::ToInt32(this->textBox3->Text);
+	String^ e_Diseño = this->textBox2->Text;
+	String^ e_Autor = this->textBox1->Text;
+	String^ e_material = this->comboBox1->Text;
+	String^ e_Fecha = this->textBox4->Text;
+	figuracorteController^ fgController = gcnew figuracorteController();
+	fgController->actualizarFiguraCorte(e_ID, e_Diseño, e_Autor, e_material, e_Fecha);
+	MessageBox::Show("Datos de figura de corte actualizados correctamente");
 	this->Close();
 }
 };

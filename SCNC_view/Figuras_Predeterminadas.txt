@@ -5,7 +5,7 @@
 23819;Rectangulo;Luis;acero;30/09/2023
 93458;Rombo;Nilton;madera;13/11/2023
 16782;Cruz;Pedro;acero;01/12/2023
-49823;Trazo;Nilton;madera;28/10/2023
+49823;Recta;Nilton;acero;28/10/2023
 75123;Triangulo;Luis;acero;14/08/2023
 61482;Cuadrado;Nilton;madera;23/06/2023
 38274;Rectangulo;Nilton;acero;05/04/2023
