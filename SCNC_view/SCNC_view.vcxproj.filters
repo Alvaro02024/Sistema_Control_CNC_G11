@@ -36,6 +36,9 @@
     <ClCompile Include="new_admin_FiguraCorte.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
+    <ClCompile Include="mnt_user_FiguraCorte.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ventanaINICIO.h">
@@ -54,6 +57,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="new_admin_FiguraCorte.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mnt_user_FiguraCorte.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

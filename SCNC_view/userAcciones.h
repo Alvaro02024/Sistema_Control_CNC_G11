@@ -1,4 +1,5 @@
 #pragma once
+#include "mnt_user_FiguraCorte.h"
 
 namespace SCNCview {
 
@@ -23,10 +24,10 @@ namespace SCNCview {
 			//
 		}
 
-		userAcciones(int FG_ID)
+		userAcciones(int FC_ID)
 		{
 			InitializeComponent();
-			this->FG_ID = FG_ID;
+			this->FC_ID = FC_ID;
 			//
 			//TODO: Add the constructor code here
 			//
@@ -51,7 +52,7 @@ namespace SCNCview {
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::Button^ button1;
-	private: int FG_ID;
+	private: int FC_ID;
 
 	private:
 		/// <summary>
@@ -131,6 +132,7 @@ namespace SCNCview {
 			this->button2->TabIndex = 0;
 			this->button2->Text = L"Seleccionar figura corte";
 			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &userAcciones::button2_Click);
 			// 
 			// button1
 			// 
@@ -160,5 +162,10 @@ namespace SCNCview {
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
 	}
+private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+	mnt_user_FiguraCorte^ nw_SeleccionarFC = gcnew mnt_user_FiguraCorte(FC_ID);
+	nw_SeleccionarFC->Show();
+
+}
 };
 }
