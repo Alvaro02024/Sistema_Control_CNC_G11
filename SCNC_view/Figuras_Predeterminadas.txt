@@ -1,9 +1,8 @@
-21597;NUevo;Alvaro;madera;02/02/2024
-13745;Trazo;Alvaro;madera;02/01/2024
+13745;Figura1;Alvaro;acero;02/01/2024
 58234;Triangulo;Luis;acero;15/05/2023
 46201;Cuadrado;Carlos;madera;21/07/2023
 23819;Rectangulo;Luis;acero;30/09/2023
-93458;Rombo;Nilton;madera;13/11/2023
+93458;RRR;Nilton;acero;13/11/2023
 16782;Cruz;Pedro;acero;01/12/2023
 49823;Recta;Nilton;acero;28/10/2023
 75123;Triangulo;Luis;acero;14/08/2023
@@ -15,3 +14,8 @@
 57934;Triangulo;Alberto;acero;07/10/2023
 42561;Cuadrado;Luis;madera;19/05/2023
 89673;Rectangulo;Nilton;acero;11/09/2023
+526234;hola;asdf;acero;23/99/9999
+526234;hola;asdf;acero;23/99/9999
+526234;hola;asdf;acero;23/99/9999
+526234;hola;asdf;acero;23/99/9999
+526234;hola;asdf;acero;23/99/9999

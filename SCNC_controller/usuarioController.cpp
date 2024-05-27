@@ -17,7 +17,7 @@ int usuarioController::verificarUser(String^ u_user, String^ u_cont) {
 		int user = Convert::ToInt32(datos[0]);
 		String^ contraseña = datos[1];
 
-		if ((Convert::ToInt32(user) == Convert::ToInt32(u_user)) && (contraseña ->CompareTo(u_cont))) {
+		if ((Convert::ToInt32(user) == Convert::ToInt32(u_user)) && (contraseña == u_cont)) {
 			confirmar = 1;
 		}
 	}
