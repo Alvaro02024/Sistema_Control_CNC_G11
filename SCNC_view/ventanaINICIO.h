@@ -197,13 +197,13 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 		if (confirmaAdmin) {
 			int FG_admin = 0;
 			adminAcciones^ nw_adminAcciones = gcnew adminAcciones(FG_admin);
-			nw_adminAcciones->Show();
+			nw_adminAcciones->ShowDialog();
 			
 		}
 		else if(confirmaUser) {
 			int FG_user = 0;
 			userAcciones^ nw_userAcciones = gcnew userAcciones(FG_user);
-			nw_userAcciones->Show();
+			nw_userAcciones->ShowDialog();
 		}
 		else {
 			MessageBox::Show("Creedenciales no válidas");

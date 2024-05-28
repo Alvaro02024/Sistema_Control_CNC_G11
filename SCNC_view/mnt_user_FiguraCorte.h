@@ -63,7 +63,7 @@ namespace SCNCview {
 	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::Button^ button4;
-	private: System::Windows::Forms::Button^ button5;
+
 	private: int code;
 
 	private:
@@ -92,7 +92,6 @@ namespace SCNCview {
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button4 = (gcnew System::Windows::Forms::Button());
-			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->groupBox1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
@@ -174,7 +173,7 @@ namespace SCNCview {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(40, 313);
+			this->button2->Location = System::Drawing::Point(101, 325);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(75, 23);
 			this->button2->TabIndex = 2;
@@ -184,7 +183,7 @@ namespace SCNCview {
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(255, 313);
+			this->button3->Location = System::Drawing::Point(437, 325);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(75, 23);
 			this->button3->TabIndex = 2;
@@ -194,7 +193,7 @@ namespace SCNCview {
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(147, 313);
+			this->button4->Location = System::Drawing::Point(272, 325);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(75, 23);
 			this->button4->TabIndex = 2;
@@ -202,29 +201,18 @@ namespace SCNCview {
 			this->button4->UseVisualStyleBackColor = true;
 			this->button4->Click += gcnew System::EventHandler(this, &mnt_user_FiguraCorte::button4_Click);
 			// 
-			// button5
-			// 
-			this->button5->Location = System::Drawing::Point(437, 313);
-			this->button5->Name = L"button5";
-			this->button5->Size = System::Drawing::Size(75, 23);
-			this->button5->TabIndex = 2;
-			this->button5->Text = L"Confirmar";
-			this->button5->UseVisualStyleBackColor = true;
-			this->button5->Click += gcnew System::EventHandler(this, &mnt_user_FiguraCorte::button5_Click);
-			// 
 			// mnt_user_FiguraCorte
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(597, 393);
 			this->Controls->Add(this->button4);
-			this->Controls->Add(this->button5);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->groupBox1);
 			this->Name = L"mnt_user_FiguraCorte";
-			this->Text = L"Selecionar figura corte";
+			this->Text = L"Mantenimiento figura corte";
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();

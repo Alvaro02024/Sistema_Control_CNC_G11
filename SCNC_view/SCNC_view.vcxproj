@@ -135,6 +135,7 @@
     <ClCompile Include="mnt_admin_FiguraCorte.cpp" />
     <ClCompile Include="mnt_user_FiguraCorte.cpp" />
     <ClCompile Include="new_admin_FiguraCorte.cpp" />
+    <ClCompile Include="ss_user_FiguraCorte.cpp" />
     <ClCompile Include="userAcciones.cpp" />
     <ClCompile Include="ventanaINICIO.cpp" />
   </ItemGroup>
@@ -152,6 +153,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="new_admin_FiguraCorte.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ss_user_FiguraCorte.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="userAcciones.h">
@@ -176,6 +180,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="new_admin_FiguraCorte.resx">
       <DependentUpon>new_admin_FiguraCorte.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ss_user_FiguraCorte.resx">
+      <DependentUpon>ss_user_FiguraCorte.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="userAcciones.resx">
       <DependentUpon>userAcciones.h</DependentUpon>

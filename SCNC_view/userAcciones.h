@@ -1,5 +1,6 @@
 #pragma once
 #include "mnt_user_FiguraCorte.h"
+#include "ss_user_FiguraCorte.h"
 
 namespace SCNCview {
 
@@ -28,6 +29,7 @@ namespace SCNCview {
 		{
 			InitializeComponent();
 			this->FC_ID = FC_ID;
+			
 			//
 			//TODO: Add the constructor code here
 			//
@@ -53,6 +55,9 @@ namespace SCNCview {
 	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::Button^ button1;
 	private: int FC_ID;
+	private: int num_FG;
+	private: System::Windows::Forms::Button^ button4;
+
 
 	private:
 		/// <summary>
@@ -70,6 +75,7 @@ namespace SCNCview {
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
+			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button1 = (gcnew System::Windows::Forms::Button());
@@ -102,6 +108,7 @@ namespace SCNCview {
 			// 
 			// groupBox2
 			// 
+			this->groupBox2->Controls->Add(this->button4);
 			this->groupBox2->Controls->Add(this->button3);
 			this->groupBox2->Controls->Add(this->button2);
 			this->groupBox2->Controls->Add(this->button1);
@@ -114,9 +121,19 @@ namespace SCNCview {
 			this->groupBox2->TabStop = false;
 			this->groupBox2->Text = L"Seleccione una acción:";
 			// 
+			// button4
+			// 
+			this->button4->Location = System::Drawing::Point(76, 140);
+			this->button4->Name = L"button4";
+			this->button4->Size = System::Drawing::Size(158, 37);
+			this->button4->TabIndex = 1;
+			this->button4->Text = L"Imprimir figura de corte";
+			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &userAcciones::button4_Click);
+			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(73, 137);
+			this->button3->Location = System::Drawing::Point(73, 195);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(162, 37);
 			this->button3->TabIndex = 0;
@@ -130,7 +147,7 @@ namespace SCNCview {
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(162, 37);
 			this->button2->TabIndex = 0;
-			this->button2->Text = L"Seleccionar figura corte";
+			this->button2->Text = L"Figuras de corte disponibles";
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Click += gcnew System::EventHandler(this, &userAcciones::button2_Click);
 			// 
@@ -162,10 +179,14 @@ namespace SCNCview {
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
 	}
-private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-	mnt_user_FiguraCorte^ nw_SeleccionarFC = gcnew mnt_user_FiguraCorte(FC_ID);
-	nw_SeleccionarFC->Show();
+	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+		mnt_user_FiguraCorte^ nw_MantFC = gcnew mnt_user_FiguraCorte();
+		nw_MantFC->ShowDialog();
 
-}
+	}
+	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+		ss_user_FiguraCorte^ nw_SSFC = gcnew ss_user_FiguraCorte(FC_ID);
+		nw_SSFC->ShowDialog();
+	}
 };
 }
